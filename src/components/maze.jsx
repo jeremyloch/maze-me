@@ -35,18 +35,20 @@ class Maze extends Component {
     render() { 
         return (
             <React.Fragment>
-                <div>
+                <div className='relative pt-16 pb-32 flex content-center items-center justify-center'>
                     <table>
                         <tbody>
                             { renderMaze(this.state.maze) }
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <form>
-                        <label htmlFor="rows">Rows: </label><input type="number" name="rows" value={this.state.rows} onChange={this.handleInputChange} />
-                        <label htmlFor="cols">Cols: </label><input type="number" name="cols" value={this.state.cols} onChange={this.handleInputChange} />
-                    </form>
+                <div className='relative min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-slate-200'>
+                    <div className='flex-auto p-5 lg:p-10'>
+                        <label htmlFor="rows" className='block uppercase text-slate-600 text-xs font-bold mb-2'>Rows: </label>
+                        <input className='border-0 px-3 py-3 placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' type="number" name="rows" value={this.state.rows} onChange={this.handleInputChange} />
+                        <label htmlFor="cols" className='block uppercase text-slate-600 text-xs font-bold mb-2'>Cols: </label>
+                        <input className='border-0 px-3 py-3 placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' type="number" name="cols" value={this.state.cols} onChange={this.handleInputChange} />
+                    </div>
                     <Button onClick={() => this.regenMaze()}>(A)Maze me</Button>
                 </div>
             </React.Fragment>

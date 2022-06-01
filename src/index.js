@@ -10,6 +10,7 @@ import Maze from './components/maze';
 
 import { AmplifyProvider } from '@aws-amplify/ui-react';
 import "@aws-amplify/ui-react/styles.css";
+import "./tailwind.css";
 
 Amplify.configure(config);
 

@@ -1,0 +1,19 @@
+enum CellType {
+  EMPTY
+  WALL
+}
+
+type Cell @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  col: Int
+  row: Int
+  type: CellType
+  Maze: Maze! @hasOne
+}
+
+type Maze @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  createdOn: AWSDateTime
+}
+ 
